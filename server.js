@@ -25,7 +25,7 @@ app.get("/student/:id", (req, res) => {
 
 //create
 app.post("/student", (req, res) => {
-    const id = currId;
+    const id = currId++;
     const newStudent = {
         name: req.body.name,
         age: req.body.age,
@@ -33,7 +33,7 @@ app.post("/student", (req, res) => {
         year: req.body.year
     };
     students[id] = newStudent;
-    res.json(students);
+    res.json(students[id]);
 });
 
 
