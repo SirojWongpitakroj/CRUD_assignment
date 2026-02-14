@@ -53,7 +53,7 @@ app.patch("/student/:id", (req, res) => {
 app.delete("/student/:id", (req, res) => {
     const id = req.params.id;
     if (!students[id]) {
-        res.send("Student not found")
+        res.status(404).send("Student not found")
     }
     delete students[id];
     res.send("Student Deleted");
